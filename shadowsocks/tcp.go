@@ -3,8 +3,8 @@ package shadowsocks
 import (
 	"net"
 
-	onet "github.com/ernestzhang/outline-ss-server/net"
-	shadowsocks "github.com/ernestzhang/outline-ss-server/client"
+	onet "outline-ss-server/net"
+	shadowsocks "outline-ss-server/client"
 	"github.com/eycorsican/go-tun2socks/core"
 )
 

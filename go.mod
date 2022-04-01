@@ -5,7 +5,7 @@ go 1.15
 require (
 	github.com/Jigsaw-Code/choir v1.0.1
 	github.com/Jigsaw-Code/getsni v0.0.0-20190807203514-efe2dbf35d1f
-	github.com/ernestzhang/outline-ss-server v1.3.2
+	outline-ss-server v1.3.2
 	github.com/eycorsican/go-tun2socks v1.16.11
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.1 // indirect
