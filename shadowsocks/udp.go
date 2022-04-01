@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	shadowsocks "outline-ss-server/client"
+	shadowsocks "./outline-ss-server/client"
 	"github.com/eycorsican/go-tun2socks/core"
 )
 

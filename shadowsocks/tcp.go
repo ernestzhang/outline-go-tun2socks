@@ -4,7 +4,7 @@ import (
 	"net"
 
 	onet "outline-ss-server/net"
-	shadowsocks "outline-ss-server/client"
+	shadowsocks "./outline-ss-server/client"
 	"github.com/eycorsican/go-tun2socks/core"
 )
 

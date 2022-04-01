@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	shadowsocks "outline-ss-server/client"
+	shadowsocks "./outline-ss-server/client"
 )
 
 // TODO: make these values configurable by exposing a struct with the connectivity methods.
