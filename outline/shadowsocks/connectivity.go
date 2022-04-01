@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"time"
 
-	shadowsocks "github.com/Jigsaw-Code/outline-ss-server/client"
+	shadowsocks "github.com/ernestzhang/outline-ss-server/client"
 	oss "github.com/ernestzhang/outline-go-tun2socks/shadowsocks"
 )
 
