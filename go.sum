@@ -3,8 +3,8 @@ github.com/Jigsaw-Code/choir v1.0.1 h1:WeRt6aTn5L+MtRNqRJ+J1RKgoO8CyXXt1dtZghy2K
 github.com/Jigsaw-Code/choir v1.0.1/go.mod h1:c4Wd1y1PeCajZbKZV+ZmcFGMDoduyqMCEMHW5iqzWXI=
 github.com/Jigsaw-Code/getsni v0.0.0-20190807203514-efe2dbf35d1f h1:PT61aMvdZPh/8L5FjmKu8DS4/VnmwSJICVZ/THpmLF0=
 github.com/Jigsaw-Code/getsni v0.0.0-20190807203514-efe2dbf35d1f/go.mod h1:C68VBkZJR/wcvgo6pmdlm6snMHWiLE844lXJ028Qh8Y=
-github.com/Jigsaw-Code/outline-ss-server v1.3.2 h1:hZW1wSNiD0Nqp5gRL0avqQqOvqZsHhG6V9Ac0zWeCU0=
-github.com/Jigsaw-Code/outline-ss-server v1.3.2/go.mod h1:eXiKkyLq4AqQvpTvDL/rYUv30OeS+lxF+fQaGGKnzmY=
+github.com/ernestzhang/outline-ss-server v1.3.2 h1:hZW1wSNiD0Nqp5gRL0avqQqOvqZsHhG6V9Ac0zWeCU0=
+github.com/ernestzhang/outline-ss-server v1.3.2/go.mod h1:eXiKkyLq4AqQvpTvDL/rYUv30OeS+lxF+fQaGGKnzmY=
 github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
 github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
 github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf/go.mod h1:ybxpYRFXyAe+OPACYpWeL0wqObRcbAqCMya13uyzqw0=
