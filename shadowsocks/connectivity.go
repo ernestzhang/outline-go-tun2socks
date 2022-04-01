@@ -7,7 +7,7 @@ import (
 	"time"
 
 	shadowsocks "github.com/Jigsaw-Code/outline-ss-server/client"
-	"github.com/prometheus/common/log"
+	"github.com/eycorsican/go-tun2socks/common/log"
 )
 
 // TODO: make these values configurable by exposing a struct with the connectivity methods.
