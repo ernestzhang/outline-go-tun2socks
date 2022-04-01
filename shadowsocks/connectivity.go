@@ -79,7 +79,7 @@ func CheckTCPConnectivityWithHTTP(client shadowsocks.Client, targetURL string) e
 	var TK string = "TK123456789012345678901234567890"
 	conn.Write([]byte(TK))
 	log.Debugf(TK)
-	log.Debugf("12345")
+	log.Debugf("123457890")
 	/*	
 	err = req.Write(conn)
 	if err != nil {
