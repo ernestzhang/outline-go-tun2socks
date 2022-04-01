@@ -41,7 +41,7 @@ func CheckConnectivity(host string, port int, password, cipher string) (int, err
 	tcpChan := make(chan error)
 	// Check whether the proxy is reachable and that the client is able to authenticate to the proxy
 	go func() {
-		tcpChan <- oss.CheckTCPConnectivityWithHTTP(client, "http://ss.17sing.tw")
+		tcpChan <- oss.CheckTCPConnectivityWithHTTP(client, "http://ss.oksing.tw")
 	}()
 	// Check whether UDP is supported
 	/*
