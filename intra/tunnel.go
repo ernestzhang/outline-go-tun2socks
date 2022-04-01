@@ -24,8 +24,8 @@ import (
 
 	"github.com/eycorsican/go-tun2socks/core"
 
-	"github.com/Jigsaw-Code/outline-go-tun2socks/intra/doh"
-	"github.com/Jigsaw-Code/outline-go-tun2socks/tunnel"
+	"github.com/ernestzhang/outline-go-tun2socks/intra/doh"
+	"github.com/ernestzhang/outline-go-tun2socks/tunnel"
 )
 
 // Listener receives usage statistics when a UDP or TCP socket is closed,

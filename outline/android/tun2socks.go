@@ -19,8 +19,8 @@ import (
 	"math"
 	"runtime/debug"
 
-	"github.com/Jigsaw-Code/outline-go-tun2socks/outline"
-	"github.com/Jigsaw-Code/outline-go-tun2socks/tunnel"
+	"github.com/ernestzhang/outline-go-tun2socks/outline"
+	"github.com/ernestzhang/outline-go-tun2socks/tunnel"
 	"github.com/eycorsican/go-tun2socks/common/log"
 )
 

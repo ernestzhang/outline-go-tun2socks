@@ -22,8 +22,8 @@ import (
 
 	"golang.org/x/net/dns/dnsmessage"
 
-	"github.com/Jigsaw-Code/outline-go-tun2socks/intra/doh"
-	"github.com/Jigsaw-Code/outline-go-tun2socks/intra/split"
+	"github.com/ernestzhang/outline-go-tun2socks/intra/doh"
+	"github.com/ernestzhang/outline-go-tun2socks/intra/split"
 )
 
 type qfunc func(q []byte) ([]byte, error)

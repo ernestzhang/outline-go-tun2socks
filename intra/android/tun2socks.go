@@ -18,10 +18,10 @@ import (
 	"runtime/debug"
 	"strings"
 
-	"github.com/Jigsaw-Code/outline-go-tun2socks/intra"
-	"github.com/Jigsaw-Code/outline-go-tun2socks/intra/doh"
-	"github.com/Jigsaw-Code/outline-go-tun2socks/intra/protect"
-	"github.com/Jigsaw-Code/outline-go-tun2socks/tunnel"
+	"github.com/ernestzhang/outline-go-tun2socks/intra"
+	"github.com/ernestzhang/outline-go-tun2socks/intra/doh"
+	"github.com/ernestzhang/outline-go-tun2socks/intra/protect"
+	"github.com/ernestzhang/outline-go-tun2socks/tunnel"
 	"github.com/eycorsican/go-tun2socks/common/log"
 )
 

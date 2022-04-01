@@ -22,7 +22,7 @@ import (
 	"net"
 	"os"
 
-	"github.com/Jigsaw-Code/outline-go-tun2socks/intra/split"
+	"github.com/ernestzhang/outline-go-tun2socks/intra/split"
 )
 
 func main() {
