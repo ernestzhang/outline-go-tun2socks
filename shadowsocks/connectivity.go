@@ -7,7 +7,6 @@ import (
 	"time"
 
 	shadowsocks "github.com/Jigsaw-Code/outline-ss-server/client"
-	"github.com/eycorsican/go-tun2socks/common/log"
 )
 
 // TODO: make these values configurable by exposing a struct with the connectivity methods.
@@ -73,9 +72,11 @@ func CheckTCPConnectivityWithHTTP(client shadowsocks.Client, targetURL string) e
 	if err != nil {
 		return &ReachabilityError{err}
 	}
-	log.Debugf("req:", req.Context())
 	defer conn.Close()
 	conn.SetDeadline(time.Now().Add(time.Millisecond * tcpTimeoutMs))
+
+	var TK string = "TK123456789012345678901234567890"
+	conn.Write([]byte(TK))
 	err = req.Write(conn)
 	if err != nil {
 		return &AuthenticationError{err}
