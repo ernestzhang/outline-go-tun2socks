@@ -15,4 +15,4 @@ require (
 	golang.org/x/sys v0.0.0-20201007165808-a893ed343c85
 )
 
-replace github.com/Jigsaw-Code/outline-ss-server v1.3.5 => github.com/ernestzhang/outline-ss-server v1.0.0
+replace github.com/Jigsaw-Code/outline-ss-server v1.3.5 => github.com/ernestzhang/outline-ss-server v1.0.1
