@@ -1,4 +1,4 @@
-module github.com/ernestzhang/outline-go-tun2socks
+module /home/ubuntu/outline-go-tun2socks
 
 go 1.15
 
@@ -15,5 +15,5 @@ require (
 	golang.org/x/sys v0.0.0-20201007165808-a893ed343c85
 )
 
-replace github.com/Jigsaw-Code/outline-ss-server v1.3.5 => github.com/ernestzhang/outline-ss-server v1.0.1
-replace github.com/ernestzhang/outline-ss-server v1.0.1 => ./outline-ss-server
+replace github.com/Jigsaw-Code/outline-ss-server v1.3.5 => "./outline-ss-server"
+replace github.com/ernestzhang/outline-ss-server => "./outline-ss-server"
