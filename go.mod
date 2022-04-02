@@ -16,4 +16,4 @@ require (
 )
 
 replace github.com/Jigsaw-Code/outline-ss-server v1.3.5 => github.com/ernestzhang/outline-ss-server v1.0.1
-replace github.com/ernestzhang/outline-ss-server v1.0.1 => /home/ubuntu/outline-ss-server
+replace github.com/ernestzhang/outline-ss-server v1.0.1 => ./outline-ss-server
