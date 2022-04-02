@@ -16,6 +16,6 @@ require (
 	golang.org/x/sys v0.0.0-20201007165808-a893ed343c85
 )
 
-replace github.com/Jigsaw-Code/outline-ss-server  => "../outline-ss-server"
+replace github.com/Jigsaw-Code/outline-ss-server v1.3.2 => github.com/ernestzhang/outline-ss-server v1.0.1
 replace github.com/ernestzhang/outline-ss-server => "../outline-ss-server"
 replace github.com/ernestzhang/outline-go-tun2socks => "../outline-go-tun2socks"
