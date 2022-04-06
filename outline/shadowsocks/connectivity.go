@@ -32,8 +32,8 @@ const reachabilityTimeout = 10 * time.Second
 // the current network. Parallelizes the execution of TCP and UDP checks, selects the appropriate
 // error code to return accounting for transient network failures.
 // Returns an error if an unexpected error ocurrs.
-func CheckConnectivity(host string, port int, password, cipher string) (int, error) {
-	client, err := shadowsocks.NewClient(host, port, password, cipher)
+func CheckConnectivity(host string, port int, password, cipher string , tk string) (int, error) {
+	client, err := shadowsocks.NewClient(host, port, password, cipher , tk)
 	if err != nil {
 		// TODO: Inspect error for invalid cipher error or proxy host resolution failure.
 		return Unexpected, err
