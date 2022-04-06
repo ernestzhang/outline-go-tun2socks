@@ -19,6 +19,8 @@ github.com/ernestzhang/outline-ss-server v1.3.8 h1:CgziSzIWUr/b9/R/zpCGoSMf6H7PI
 github.com/ernestzhang/outline-ss-server v1.3.8/go.mod h1:mZCIAYJWwgBpM3ojlojJ/lvZsXDTwoEyo/tXxk4q3KY=
 github.com/ernestzhang/outline-ss-server v1.3.9 h1:ogYh2Hb/VklnGQHqxduigKK0MXH5XKq+Ok8ro6ciNys=
 github.com/ernestzhang/outline-ss-server v1.3.9/go.mod h1:mZCIAYJWwgBpM3ojlojJ/lvZsXDTwoEyo/tXxk4q3KY=
+github.com/ernestzhang/outline-ss-server v1.4.3 h1:8WPT+AsxUa31dizS0u5HaHZNOF6Ml/PlzhjJQMFkJh0=
+github.com/ernestzhang/outline-ss-server v1.4.3/go.mod h1:mZCIAYJWwgBpM3ojlojJ/lvZsXDTwoEyo/tXxk4q3KY=
 github.com/eycorsican/go-tun2socks v1.16.11 h1:+hJDNgisrYaGEqoSxhdikMgMJ4Ilfwm/IZDrWRrbaH8=
 github.com/eycorsican/go-tun2socks v1.16.11/go.mod h1:wgB2BFT8ZaPKyKOQ/5dljMG/YIow+AIXyq4KBwJ5sGQ=
 github.com/go-kit/kit v0.8.0/go.mod h1:xBxKIO96dXMWWy0MnWVtmwkA9/13aqxPnvrjFYMA2as=

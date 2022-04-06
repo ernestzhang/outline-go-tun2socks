@@ -53,6 +53,7 @@ var args struct {
 	checkConnectivity *bool
 	dnsFallback       *bool
 	version           *bool
+	tk		 *string
 }
 var version string // Populated at build time through `-X main.version=...`
 var lwipWriter io.Writer
@@ -71,7 +72,7 @@ func main() {
 	args.dnsFallback = flag.Bool("dnsFallback", false, "Enable DNS fallback over TCP (overrides the UDP handler).")
 	args.checkConnectivity = flag.Bool("checkConnectivity", false, "Check the proxy TCP and UDP connectivity and exit.")
 	args.version = flag.Bool("version", false, "Print the version and exit.")
-
+	args.tk = flag.String("tk", "123", "token ...")
 	flag.Parse()
 
 	if *args.version {
@@ -94,9 +95,12 @@ func main() {
 	} else if *args.proxyCipher == "" {
 		log.Errorf("Must provide a Shadowsocks proxy encryption cipher")
 		os.Exit(oss.IllegalConfiguration)
+	}else if *args.tk == "" || len(*args.tk) != 32 {
+		log.Errorf("wrong token...")
+	    	os.Exit(oss.IllegalConfiguration)
 	}
 
-	tk  := "TK123456789012345678901234567890"
+	tk  := *args.tk 
 	if *args.checkConnectivity {
 		connErrCode, err := oss.CheckConnectivity(*args.proxyHost, *args.proxyPort, *args.proxyPassword, *args.proxyCipher , tk)
 		log.Debugf("Connectivity checks error code: %v", connErrCode)
