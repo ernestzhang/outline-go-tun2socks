@@ -23,8 +23,8 @@ import (
 	"github.com/eycorsican/go-tun2socks/core"
 	"github.com/eycorsican/go-tun2socks/proxy/dnsfallback"
 
-	oss "github.com/Jigsaw-Code/outline-go-tun2socks/shadowsocks"
-	"github.com/Jigsaw-Code/outline-go-tun2socks/tunnel"
+	oss "github.com/ernestzhang/outline-go-tun2socks/shadowsocks"
+	"github.com/ernestzhang/outline-go-tun2socks/tunnel"
 	shadowsocks "github.com/ernestzhang/outline-ss-server/client"
 )
 
