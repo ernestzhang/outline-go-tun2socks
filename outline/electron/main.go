@@ -96,8 +96,9 @@ func main() {
 		os.Exit(oss.IllegalConfiguration)
 	}
 
+	var  tk string := "TK123456789012345678901234567890"
 	if *args.checkConnectivity {
-		connErrCode, err := oss.CheckConnectivity(*args.proxyHost, *args.proxyPort, *args.proxyPassword, *args.proxyCipher)
+		connErrCode, err := oss.CheckConnectivity(*args.proxyHost, *args.proxyPort, *args.proxyPassword, *args.proxyCipher , tk)
 		log.Debugf("Connectivity checks error code: %v", connErrCode)
 		if err != nil {
 			log.Errorf("Failed to perform connectivity checks: %v", err)
@@ -117,14 +118,14 @@ func main() {
 
 	// Register TCP and UDP connection handlers
 	core.RegisterTCPConnHandler(
-		shadowsocks.NewTCPHandler(*args.proxyHost, *args.proxyPort, *args.proxyPassword, *args.proxyCipher , "TK123456789012345678901234567890"))
+		shadowsocks.NewTCPHandler(*args.proxyHost, *args.proxyPort, *args.proxyPassword, *args.proxyCipher , tk))
 	if *args.dnsFallback {
 		// UDP connectivity not supported, fall back to DNS over TCP.
 		log.Debugf("Registering DNS fallback UDP handler")
 		core.RegisterUDPConnHandler(dnsfallback.NewUDPHandler())
 	} else {
 		core.RegisterUDPConnHandler(
-			shadowsocks.NewUDPHandler(*args.proxyHost, *args.proxyPort, *args.proxyPassword, *args.proxyCipher, udpTimeout , "TK123456789012345678901234567890"))
+			shadowsocks.NewUDPHandler(*args.proxyHost, *args.proxyPort, *args.proxyPassword, *args.proxyCipher, udpTimeout , tk))
 	}
 
 	// Configure LWIP stack to receive input data from the TUN device
