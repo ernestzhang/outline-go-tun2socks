@@ -18,7 +18,7 @@ type tcpHandler struct {
 // `port` is the port of the Shadowsocks proxy server.
 // `password` is password used to authenticate to the server.
 // `cipher` is the encryption cipher of the Shadowsocks proxy.
-func NewTCPHandler(host string, port int, password, cipher string tk string) core.TCPConnHandler {
+func NewTCPHandler(host string, port int, password, cipher string , tk string) core.TCPConnHandler {
 	client, err := shadowsocks.NewClient(host, port, password, cipher , tk)
 	if err != nil {
 		return nil
