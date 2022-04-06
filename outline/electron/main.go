@@ -96,7 +96,7 @@ func main() {
 		os.Exit(oss.IllegalConfiguration)
 	}
 
-	var  tk string := "TK123456789012345678901234567890"
+	tk  := "TK123456789012345678901234567890"
 	if *args.checkConnectivity {
 		connErrCode, err := oss.CheckConnectivity(*args.proxyHost, *args.proxyPort, *args.proxyPassword, *args.proxyCipher , tk)
 		log.Debugf("Connectivity checks error code: %v", connErrCode)
