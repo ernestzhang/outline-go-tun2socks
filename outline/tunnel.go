@@ -25,7 +25,7 @@ import (
 
 	oss "github.com/Jigsaw-Code/outline-go-tun2socks/shadowsocks"
 	"github.com/Jigsaw-Code/outline-go-tun2socks/tunnel"
-	shadowsocks "github.com/Jigsaw-Code/outline-ss-server/client"
+	shadowsocks "github.com/ernestzhang/outline-ss-server/client"
 )
 
 // Tunnel represents a tunnel from a TUN device to a server.

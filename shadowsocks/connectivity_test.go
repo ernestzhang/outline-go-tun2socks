@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	onet "github.com/Jigsaw-Code/outline-ss-server/net"
-	shadowsocks "github.com/Jigsaw-Code/outline-ss-server/client"
+	onet "github.com/ernestzhang/outline-ss-server/net"
+	shadowsocks "github.com/ernestzhang/outline-ss-server/client"
 )
 
 func TestCheckUDPConnectivityWithDNS_Success(t *testing.T) {
