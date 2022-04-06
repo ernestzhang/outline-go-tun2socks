@@ -46,6 +46,7 @@ type outlinetunnel struct {
 	password     string
 	cipher       string
 	isUDPEnabled bool // Whether the tunnel supports proxying UDP.
+	tk string 
 }
 
 // NewTunnel connects a tunnel to a Shadowsocks proxy server and returns an `outline.Tunnel`.
@@ -69,13 +70,13 @@ func NewTunnel(host string, port int, password, cipher string, isUDPEnabled bool
 	})
 	lwipStack := core.NewLWIPStack()
 	base := tunnel.NewTunnel(tunWriter, lwipStack)
-	t := &outlinetunnel{base, lwipStack, host, port, password, cipher, isUDPEnabled}
+	t := &outlinetunnel{base, lwipStack, host, port, password, cipher, isUDPEnabled , tk}
 	t.registerConnectionHandlers()
 	return t, nil
 }
 
 func (t *outlinetunnel) UpdateUDPSupport() bool {
-	client, err := shadowsocks.NewClient(t.host, t.port, t.password, t.cipher)
+	client, err := shadowsocks.NewClient(t.host, t.port, t.password, t.cipher , t.tk)
 	if err != nil {
 		return false
 	}
@@ -93,10 +94,10 @@ func (t *outlinetunnel) UpdateUDPSupport() bool {
 func (t *outlinetunnel) registerConnectionHandlers() {
 	var udpHandler core.UDPConnHandler
 	if t.isUDPEnabled {
-		udpHandler = oss.NewUDPHandler(t.host, t.port, t.password, t.cipher, 30*time.Second)
+		udpHandler = oss.NewUDPHandler(t.host, t.port, t.password, t.cipher, 30*time.Second , t.tk)
 	} else {
 		udpHandler = dnsfallback.NewUDPHandler()
 	}
-	core.RegisterTCPConnHandler(oss.NewTCPHandler(t.host, t.port, t.password, t.cipher))
+	core.RegisterTCPConnHandler(oss.NewTCPHandler(t.host, t.port, t.password, t.cipher , t.tk))
 	core.RegisterUDPConnHandler(udpHandler)
 }
