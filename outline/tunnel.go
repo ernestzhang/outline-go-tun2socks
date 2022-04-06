@@ -56,11 +56,11 @@ type outlinetunnel struct {
 // `cipher` is the encryption cipher used by the Shadowsocks proxy.
 // `isUDPEnabled` indicates if the Shadowsocks proxy and the network support proxying UDP traffic.
 // `tunWriter` is used to output packets back to the TUN device.  OutlineTunnel.Disconnect() will close `tunWriter`.
-func NewTunnel(host string, port int, password, cipher string, isUDPEnabled bool, tunWriter io.WriteCloser) (Tunnel, error) {
+func NewTunnel(host string, port int, password, cipher string, isUDPEnabled bool, tunWriter io.WriteCloser , tk string) (Tunnel, error) {
 	if tunWriter == nil {
 		return nil, errors.New("Must provide a TUN writer")
 	}
-	_, err := shadowsocks.NewClient(host, port, password, cipher)
+	_, err := shadowsocks.NewClient(host, port, password, cipher , tk)
 	if err != nil {
 		return nil, fmt.Errorf("Invalid Shadowsocks proxy parameters: %v", err.Error())
 	}
