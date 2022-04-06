@@ -30,8 +30,8 @@ type ReachabilityError struct {
 // CheckUDPConnectivityWithDNS determines whether the Shadowsocks proxy represented by `client` and
 // the network support UDP traffic by issuing a DNS query though a resolver at `resolverAddr`.
 // Returns nil on success or an error on failure.
-func CheckUDPConnectivityWithDNS(client shadowsocks.Client, resolverAddr net.Addr) error {
-	conn, err := client.ListenUDP(nil)
+func CheckUDPConnectivityWithDNS(client shadowsocks.Client, resolverAddr net.Addr , tk string) error {
+	conn, err := client.ListenUDP(nil , tk)
 	if err != nil {
 		return err
 	}
