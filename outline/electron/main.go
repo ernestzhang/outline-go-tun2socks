@@ -95,7 +95,7 @@ func main() {
 	} else if *args.proxyCipher == "" {
 		log.Errorf("Must provide a Shadowsocks proxy encryption cipher")
 		os.Exit(oss.IllegalConfiguration)
-	}else if *args.tk == "" || len(*args.tk) != 32 {
+	}else if *args.tk == "" {//|| len(*args.tk) != 32 {
 		log.Errorf("wrong token...")
 	    	os.Exit(oss.IllegalConfiguration)
 	}
