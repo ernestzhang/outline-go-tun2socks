@@ -66,7 +66,7 @@ func CheckTCPConnectivityWithHTTP(client shadowsocks.Client, targetURL string) e
 	}
 	targetAddr := req.Host
 	if !hasPort(targetAddr) {
-		targetAddr = net.JoinHostPort(targetAddr, "9001")
+		targetAddr = net.JoinHostPort(targetAddr, "80")
 	}
 	conn, err := client.DialTCP(nil, targetAddr)
 	if err != nil {
