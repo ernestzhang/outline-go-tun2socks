@@ -15,7 +15,6 @@
 package outline
 
 import (
-	"encoding/hex"
 	"errors"
 	"fmt"
 	"io"
@@ -62,20 +61,7 @@ func NewTunnel(host string, port int, password, cipher string, isUDPEnabled bool
 	if tunWriter == nil {
 		return nil, errors.New("Must provide a TUN writer")
 	}
-	tk_len := len(tk)
-	if tk_len != 32 && tk_len != 0 {
-		return nil, errors.New("token length must be 32 bytes or 0")
-	}
-
-	tk_bin := ""
-	if tk_len == 32 {
-		_tk_bin, err := hex.DecodeString(tk)
-		if err != nil {
-			return nil, errors.New("decode token failed")
-		}
-		tk_bin = string(_tk_bin)
-	}
-	_, err := shadowsocks.NewClient(host, port, password, cipher, tk_bin)
+	_, err := shadowsocks.NewClient(host, port, password, cipher, tk)
 	if err != nil {
 		return nil, fmt.Errorf("Invalid Shadowsocks proxy parameters: %v", err.Error())
 	}
@@ -84,7 +70,7 @@ func NewTunnel(host string, port int, password, cipher string, isUDPEnabled bool
 	})
 	lwipStack := core.NewLWIPStack()
 	base := tunnel.NewTunnel(tunWriter, lwipStack)
-	t := &outlinetunnel{base, lwipStack, host, port, password, cipher, isUDPEnabled, tk_bin}
+	t := &outlinetunnel{base, lwipStack, host, port, password, cipher, isUDPEnabled, tk}
 	t.registerConnectionHandlers()
 	return t, nil
 }
