@@ -74,18 +74,11 @@ func CheckTCPConnectivityWithHTTP(client shadowsocks.Client, targetURL string) e
 	}
 	defer conn.Close()
 	conn.SetDeadline(time.Now().Add(time.Millisecond * tcpTimeoutMs))
-	/*
-		var TK string = "TK123456789012345678901234567890"
-		conn.Write([]byte(TK))
-		log.Debugf(TK)
-		log.Debugf("123457890")
-	*/
-	/*
-		err = req.Write(conn)
-		if err != nil {
-			return &AuthenticationError{err}
-		}
-	*/
+	
+	err = req.Write(conn)
+	if err != nil {
+		return &AuthenticationError{err}
+	}
 	n, err := conn.Read(make([]byte, bufferLength))
 	if n == 0 && err != nil {
 		return &AuthenticationError{err}
