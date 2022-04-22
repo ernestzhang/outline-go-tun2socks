@@ -44,7 +44,7 @@ func CheckConnectivity(host string, port int, password, cipher string , tk strin
 		tcpChan <- oss.CheckTCPConnectivityWithHTTP(client, "http://example.com")
 	}()
 	// Check whether UDP is supported
-	udpErr := oss.CheckUDPConnectivityWithDNS(client, shadowsocks.NewAddr("1.1.1.1:53", "udp"))
+	udpErr := oss.CheckUDPConnectivityWithDNS(client, shadowsocks.NewAddr("8.8.8.8:53", "udp"))
 	if udpErr == nil {
 		// The UDP connectvity check is a superset of the TCP checks. If the other tests fail,
 		// assume it's due to intermittent network conditions and declare success anyway.
