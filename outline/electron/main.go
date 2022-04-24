@@ -54,6 +54,8 @@ var args struct {
 	dnsFallback       *bool
 	version           *bool
 	tk		 *string
+	tcp_website      *string
+	udp_dns		 *string
 }
 var version string // Populated at build time through `-X main.version=...`
 var lwipWriter io.Writer
