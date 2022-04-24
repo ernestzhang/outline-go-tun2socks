@@ -75,7 +75,7 @@ func main() {
 	args.checkConnectivity = flag.Bool("checkConnectivity", false, "Check the proxy TCP and UDP connectivity and exit.")
 	args.version = flag.Bool("version", false, "Print the version and exit.")
 	args.tk = flag.String("tk", "123", "token ...")
-	args.tcp_website = flag.String("tcp_website", "google.com", "need website")
+	args.tcp_website = flag.String("tcp_website", "http://google.com", "need website")
 	args.udp_dns = flag.String("udp_dns", "8.8.8.8:53", "need dns svr")
 	flag.Parse()
 
