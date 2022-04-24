@@ -73,6 +73,8 @@ func main() {
 	args.checkConnectivity = flag.Bool("checkConnectivity", false, "Check the proxy TCP and UDP connectivity and exit.")
 	args.version = flag.Bool("version", false, "Print the version and exit.")
 	args.tk = flag.String("tk", "123", "token ...")
+	args.tcp_website = flag.String("tcp_website", "google.com", "need website")
+	args.udp_dns = flag.String("udp_dns", "8.8.8.8:53", "need dns svr")
 	flag.Parse()
 
 	if *args.version {
@@ -95,14 +97,16 @@ func main() {
 	} else if *args.proxyCipher == "" {
 		log.Errorf("Must provide a Shadowsocks proxy encryption cipher")
 		os.Exit(oss.IllegalConfiguration)
-	}else if *args.tk == "" {//|| len(*args.tk) != 32 {
+	}/*else if *args.tk == "" {//|| len(*args.tk) != 32 {
 		log.Errorf("wrong token...")
 	    	os.Exit(oss.IllegalConfiguration)
-	}
+	}*/
 
 	tk  := *args.tk 
+	tcp_website := *args.tcp_website
+	udp_dns := *args.udp_dns
 	if *args.checkConnectivity {
-		connErrCode, err := oss.CheckConnectivity(*args.proxyHost, *args.proxyPort, *args.proxyPassword, *args.proxyCipher , tk)
+		connErrCode, err := oss.CheckConnectivity(*args.proxyHost, *args.proxyPort, *args.proxyPassword, *args.proxyCipher , tk , tcp_website , udp_dns)
 		log.Debugf("Connectivity checks error code: %v", connErrCode)
 		if err != nil {
 			log.Errorf("Failed to perform connectivity checks: %v", err)

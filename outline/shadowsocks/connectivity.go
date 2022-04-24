@@ -32,7 +32,7 @@ const reachabilityTimeout = 10 * time.Second
 // the current network. Parallelizes the execution of TCP and UDP checks, selects the appropriate
 // error code to return accounting for transient network failures.
 // Returns an error if an unexpected error ocurrs.
-func CheckConnectivity(host string, port int, password, cipher string , tk string) (int, error) {
+func CheckConnectivity(host string, port int, password, cipher string , tk string , tcp_website string , udp_dns string) (int, error) {
 	client, err := shadowsocks.NewClient(host, port, password, cipher , tk)
 	if err != nil {
 		// TODO: Inspect error for invalid cipher error or proxy host resolution failure.
@@ -41,10 +41,10 @@ func CheckConnectivity(host string, port int, password, cipher string , tk strin
 	tcpChan := make(chan error)
 	// Check whether the proxy is reachable and that the client is able to authenticate to the proxy
 	go func() {
-		tcpChan <- oss.CheckTCPConnectivityWithHTTP(client, "http://example.com")
+		tcpChan <- oss.CheckTCPConnectivityWithHTTP(client, tcp_website)
 	}()
 	// Check whether UDP is supported
-	udpErr := oss.CheckUDPConnectivityWithDNS(client, shadowsocks.NewAddr("8.8.8.8:53", "udp"))
+	udpErr := oss.CheckUDPConnectivityWithDNS(client, shadowsocks.NewAddr(udp_dns , "udp"))
 	if udpErr == nil {
 		// The UDP connectvity check is a superset of the TCP checks. If the other tests fail,
 		// assume it's due to intermittent network conditions and declare success anyway.
